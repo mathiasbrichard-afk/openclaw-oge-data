@@ -213,7 +213,7 @@ def _search_oge(page, from_str: str, to_str: str) -> list:
     def handle_response(response):
         ct = response.headers.get("content-type", "")
         url = response.url
-        if "json" in ct.lower() or any(k in url for k in ("/api/", "/search", "/disclosure", "/filing")):
+        if "json" in ct.lower():
             try:
                 body = response.body()
                 if body:
@@ -246,81 +246,39 @@ def _search_oge(page, from_str: str, to_str: str) -> list:
     btns = page.locator("button, input[type='submit']").all()
     log(f"  Buttons: {[b.get_attribute('id') or b.inner_text()[:30] for b in btns[:10]]}")
 
-    # Clear captured responses before submitting search
+    # Clear captured responses before filtering
     captured_responses.clear()
 
-    # --- Try to fill in search form ---
-    search_attempted = False
-
-    # Try last name field
-    for sel in ["#lastName", "[name='lastName']", "[placeholder*='Last']", "[placeholder*='last']",
-                "input[aria-label*='Last']", "#filerLastName", "[name='filerLastName']"]:
-        loc = page.locator(sel)
-        if loc.count() > 0:
-            loc.first.fill("Trump")
-            log(f"  Filled last name 'Trump' via {sel}")
-            search_attempted = True
-            break
-
-    # Try first name field
-    for sel in ["#firstName", "[name='firstName']", "[placeholder*='First']", "[placeholder*='first']",
-                "input[aria-label*='First']", "#filerFirstName", "[name='filerFirstName']"]:
-        loc = page.locator(sel)
-        if loc.count() > 0:
-            loc.first.fill("Donald")
-            log(f"  Filled first name 'Donald' via {sel}")
-            break
-
-    # Try report type — look for 278-T or PTR option
-    for sel in ["select[name='reportType']", "#reportType", "select[aria-label*='Report']",
-                "select[id*='report']", "select[name*='type']"]:
-        loc = page.locator(sel)
-        if loc.count() > 0:
-            options = loc.locator("option").all()
-            log(f"  Report type options: {[o.inner_text() for o in options[:10]]}")
-            for opt in options:
-                text = opt.inner_text().lower()
-                val = opt.get_attribute("value") or ""
-                if "278" in text or "ptr" in text or "periodic" in text or "transaction" in text:
-                    loc.select_option(value=val)
-                    log(f"  Selected report type: {text!r} (value={val!r})")
-                    break
-            break
-
-    # Try date range
-    for from_sel in ["#dateFrom", "[name='dateFrom']", "[name='fromDate']", "#startDate",
-                     "[placeholder*='From']", "[placeholder*='Start']", "[aria-label*='From']"]:
-        loc = page.locator(from_sel)
-        if loc.count() > 0:
-            loc.first.fill(from_str)
-            log(f"  From date {from_str} via {from_sel}")
-            break
-
-    for to_sel in ["#dateTo", "[name='dateTo']", "[name='toDate']", "#endDate",
-                   "[placeholder*='To']", "[placeholder*='End']", "[aria-label*='To']"]:
-        loc = page.locator(to_sel)
-        if loc.count() > 0:
-            loc.first.fill(to_str)
-            log(f"  To date {to_str} via {to_sel}")
-            break
-
-    # --- Submit search ---
-    if search_attempted:
-        for btn_sel in ["button[type='submit']", "#btnSearch", "button:has-text('Search')",
-                        "input[type='submit']", "input[value='Search']", "button:has-text('Find')"]:
-            btn = page.locator(btn_sel)
-            if btn.count() > 0:
-                log(f"  Clicking search via {btn_sel}")
-                btn.first.click()
-                try:
-                    page.wait_for_load_state("networkidle", timeout=20000)
-                except PWTimeout:
-                    pass
-                log(f"  After search: {page.title()!r}")
-                break
+    # --- Filter using DataTables column filter inputs ---
+    # The OGE table uses DataTables with per-column filter inputs:
+    #   Filter Date Added | Filter Title | Filter Type | Filter Name | Filter Agency | Filter Level
+    name_filter = page.locator("input[placeholder='Filter Name']")
+    if name_filter.count() > 0:
+        log("  Filling 'Filter Name' with 'Trump'")
+        name_filter.first.fill("Trump")
+        name_filter.first.press("Enter")
+        try:
+            page.wait_for_load_state("networkidle", timeout=15000)
+        except PWTimeout:
+            pass
     else:
-        log("  WARNING: Could not find search form — dumping page content for diagnosis")
-        log(f"  Page HTML (first 2000 chars): {page.content()[:2000]}")
+        log("  WARNING: 'Filter Name' input not found — dumping all inputs for diagnosis")
+        for inp in page.locator("input, select").all():
+            try:
+                log(f"    id={inp.get_attribute('id')!r} placeholder={inp.get_attribute('placeholder')!r}")
+            except Exception:
+                pass
+
+    # Also try filtering by type — PTR / 278-T
+    type_filter = page.locator("input[placeholder='Filter Type']")
+    if type_filter.count() > 0:
+        type_filter.first.fill("278-T")
+        type_filter.first.press("Enter")
+        try:
+            page.wait_for_load_state("networkidle", timeout=10000)
+        except PWTimeout:
+            pass
+        log("  Filtered type by '278-T'")
 
     # --- Parse captured XHR responses ---
     log(f"  Total XHR responses captured: {len(captured_responses)}")
@@ -350,39 +308,43 @@ def _search_oge(page, from_str: str, to_str: str) -> list:
         if rows is None:
             continue
 
-        log(f"  Sample rows: {json.dumps(rows[:2])[:500]}")
+        log(f"  Sample rows: {json.dumps(rows[:2])[:600]}")
 
         for row in rows:
-            # Flexible field extraction
+            # OGE DataTables format: [date_added, title_html, type, name_html, agency, level]
             if isinstance(row, list):
-                # DataTables format: [first, last, agency, link_html, date]
                 if len(row) < 4:
                     continue
-                member = f"{str(row[0]).strip()} {str(row[1]).strip()}".strip()
-                link_html = str(row[3]) if len(row) > 3 else ""
-                filing_date = str(row[4]).strip() if len(row) > 4 else ""
-                m = re.search(r'href=["\']([^"\']+)["\']', link_html)
-                detail_url = m.group(1) if m else ""
+                # Extract name from HTML in column 3: <a href="/...">Lastname, Firstname</a>
+                name_html = str(row[3])
+                link_m = re.search(r'href=["\']([^"\']+)["\']', name_html)
+                name_text = re.sub(r'<[^>]+>', '', name_html).strip()
+                filing_type = str(row[2]).strip()   # e.g. "278-T", "278"
+                filing_date = re.sub(r'<[^>]+>', '', str(row[0])).strip()
+                detail_url = link_m.group(1) if link_m else ""
                 if detail_url and not detail_url.startswith("http"):
                     detail_url = "https://www.oge.gov" + detail_url
+                member = name_text or "Donald Trump"
             elif isinstance(row, dict):
                 first = row.get("firstName", row.get("first_name", row.get("filerFirstName", "")))
                 last = row.get("lastName", row.get("last_name", row.get("filerLastName", "")))
                 member = f"{first} {last}".strip() or row.get("filerName", row.get("name", "Unknown"))
                 filing_date = row.get("filingDate", row.get("filing_date", row.get("dateReceived", "")))
+                filing_type = row.get("reportType", row.get("type", ""))
                 detail_url = row.get("url", row.get("detailUrl", row.get("link", "")))
                 if detail_url and not detail_url.startswith("http"):
                     detail_url = "https://www.oge.gov" + detail_url
             else:
                 continue
 
-            if "trump" in member.lower() or not member.strip():
+            if "trump" in member.lower():
                 filings.append({
-                    "member": member or "Donald Trump",
+                    "member": member,
                     "detail_url": detail_url,
-                    "filing_date": str(filing_date),
+                    "filing_date": filing_date,
+                    "filing_type": filing_type,
                 })
-                log(f"  Filing: {member}  date={filing_date}  url={detail_url[:60]}")
+                log(f"  Filing: {member}  type={filing_type}  date={filing_date}  url={detail_url[:60]}")
 
     # --- Fallback: try to find filing links directly on the rendered page ---
     if not filings:
