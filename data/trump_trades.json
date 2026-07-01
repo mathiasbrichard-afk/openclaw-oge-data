@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-01T13:12:20Z",
+  "last_updated": "2026-07-01T13:19:17Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -240,7 +240,7 @@
       "type": "Buy",
       "date": "2026-05-29",
       "filing_date": "2026-07-01",
-      "amount_raw": "$100,001, - $250,000",
+      "amount_raw": "$100,001 - $250,000",
       "amount_lower": 100001
     },
     {
@@ -251,7 +251,7 @@
       "type": "Sell",
       "date": "2026-05-28",
       "filing_date": "2026-07-01",
-      "amount_raw": "$100,001, - $250,000",
+      "amount_raw": "$100,001 - $250,000",
       "amount_lower": 100001
     },
     {
@@ -317,7 +317,7 @@
       "type": "Sell",
       "date": "2026-05-18",
       "filing_date": "2026-07-01",
-      "amount_raw": "$1,001, - $15,000",
+      "amount_raw": "$1,001 - $15,000",
       "amount_lower": 1001
     },
     {
@@ -361,7 +361,7 @@
       "type": "Buy",
       "date": "2026-05-15",
       "filing_date": "2026-07-01",
-      "amount_raw": "No $1,001, - $15,000",
+      "amount_raw": "No $1,001 - $15,000",
       "amount_lower": 1001
     },
     {
@@ -416,7 +416,7 @@
       "type": "Buy",
       "date": "2026-05-05",
       "filing_date": "2026-07-01",
-      "amount_raw": "$500,001, - $1,000,000",
+      "amount_raw": "$500,001 - $1,000,000",
       "amount_lower": 500001
     },
     {
@@ -427,7 +427,7 @@
       "type": "Sell",
       "date": "2026-05-05",
       "filing_date": "2026-07-01",
-      "amount_raw": "$1,000,001, - $5,000,000\n$500,001, - $1,000,000",
+      "amount_raw": "$1,000,001, - $5,000,000\n$500,001 - $1,000,000",
       "amount_lower": 1000001
     },
     {
@@ -460,7 +460,7 @@
       "type": "Sell",
       "date": "2026-04-28",
       "filing_date": "2026-07-01",
-      "amount_raw": "$1,001, - $15,000",
+      "amount_raw": "$1,001 - $15,000",
       "amount_lower": 1001
     },
     {
@@ -515,7 +515,7 @@
       "type": "Sell",
       "date": "2026-04-17",
       "filing_date": "2026-07-01",
-      "amount_raw": "$1,000,001, - $5,ODO 000",
+      "amount_raw": "$1,000,001 - $5,ODO 000",
       "amount_lower": 1000001
     },
     {
@@ -526,7 +526,7 @@
       "type": "Exchange",
       "date": "2026-04-17",
       "filing_date": "2026-07-01",
-      "amount_raw": "$50,001, - $100,000",
+      "amount_raw": "$50,001 - $100,000",
       "amount_lower": 50001
     },
     {
@@ -537,7 +537,7 @@
       "type": "Buy",
       "date": "2026-04-17",
       "filing_date": "2026-07-01",
-      "amount_raw": "$1,001, - $15,000",
+      "amount_raw": "$1,001 - $15,000",
       "amount_lower": 1001
     },
     {
@@ -559,7 +559,7 @@
       "type": "Buy",
       "date": "2026-04-15",
       "filing_date": "2026-07-01",
-      "amount_raw": "$15001 - $50000\n$1,001, - $15,000",
+      "amount_raw": "$15001 - $50000\n$1,001 - $15,000",
       "amount_lower": 15001
     },
     {
@@ -592,7 +592,7 @@
       "type": "Buy",
       "date": "2026-04-10",
       "filing_date": "2026-07-01",
-      "amount_raw": "$50,001, - $100,000",
+      "amount_raw": "$50,001 - $100,000",
       "amount_lower": 50001
     },
     {
@@ -614,7 +614,7 @@
       "type": "Sell",
       "date": "2026-04-07",
       "filing_date": "2026-07-01",
-      "amount_raw": "$1,001, - $15,000",
+      "amount_raw": "$1,001 - $15,000",
       "amount_lower": 1001
     },
     {
@@ -625,7 +625,7 @@
       "type": "Buy",
       "date": "2026-04-07",
       "filing_date": "2026-07-01",
-      "amount_raw": "$100,001, - $250,000",
+      "amount_raw": "$100,001 - $250,000",
       "amount_lower": 100001
     }
   ]
