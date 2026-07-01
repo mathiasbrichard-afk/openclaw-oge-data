@@ -24,7 +24,8 @@ import requests
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 
-OGE_BASE = "https://efts.oge.gov/EFTS"
+OGE_BASE = "https://www.oge.gov/web/OGE.nsf"
+OGE_SEARCH = f"{OGE_BASE}/Officials%20Individual%20Disclosures%20Search%20Collection?OpenForm"
 OUTPUT = Path("data/trump_trades.json")
 LOOKBACK_DAYS = 90
 MAX_FILINGS = 50
@@ -223,12 +224,12 @@ def _search_oge(page, from_str: str, to_str: str) -> list:
 
     page.on("response", handle_response)
 
-    # --- Navigate to OGE EFTS home ---
-    log(f"Navigating to {OGE_BASE}/home")
+    # --- Navigate to OGE public disclosure search ---
+    log(f"Navigating to {OGE_SEARCH}")
     try:
-        page.goto(f"{OGE_BASE}/home", wait_until="networkidle", timeout=30000)
+        page.goto(OGE_SEARCH, wait_until="networkidle", timeout=30000)
     except PWTimeout:
-        log("  networkidle timeout on home page — continuing")
+        log("  networkidle timeout on search page — continuing")
     log(f"  Title: {page.title()!r}  URL: {page.url}")
 
     # Log all form inputs on the page
@@ -363,7 +364,7 @@ def _search_oge(page, from_str: str, to_str: str) -> list:
                 m = re.search(r'href=["\']([^"\']+)["\']', link_html)
                 detail_url = m.group(1) if m else ""
                 if detail_url and not detail_url.startswith("http"):
-                    detail_url = OGE_BASE + detail_url
+                    detail_url = "https://www.oge.gov" + detail_url
             elif isinstance(row, dict):
                 first = row.get("firstName", row.get("first_name", row.get("filerFirstName", "")))
                 last = row.get("lastName", row.get("last_name", row.get("filerLastName", "")))
@@ -371,7 +372,7 @@ def _search_oge(page, from_str: str, to_str: str) -> list:
                 filing_date = row.get("filingDate", row.get("filing_date", row.get("dateReceived", "")))
                 detail_url = row.get("url", row.get("detailUrl", row.get("link", "")))
                 if detail_url and not detail_url.startswith("http"):
-                    detail_url = OGE_BASE + detail_url
+                    detail_url = "https://www.oge.gov" + detail_url
             else:
                 continue
 
