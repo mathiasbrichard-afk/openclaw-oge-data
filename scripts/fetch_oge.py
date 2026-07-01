@@ -309,39 +309,43 @@ def _search_oge(page, from_str: str, to_str: str) -> list:
 
         for row in rows:
             # OGE DataTables format: [date_added, title_html, type, name_html, agency, level]
-            if isinstance(row, list):
-                if len(row) < 4:
-                    continue
-                # Extract name from HTML in column 3: <a href="/...">Lastname, Firstname</a>
-                name_html = str(row[3])
-                link_m = re.search(r'href=["\']([^"\']+)["\']', name_html)
-                name_text = re.sub(r'<[^>]+>', '', name_html).strip()
-                filing_type = str(row[2]).strip()   # e.g. "278-T", "278"
-                filing_date = re.sub(r'<[^>]+>', '', str(row[0])).strip()
-                detail_url = link_m.group(1) if link_m else ""
-                if detail_url and not detail_url.startswith("http"):
-                    detail_url = "https://www.oge.gov" + detail_url
-                member = name_text or "Donald Trump"
-            elif isinstance(row, dict):
-                first = row.get("firstName", row.get("first_name", row.get("filerFirstName", "")))
-                last = row.get("lastName", row.get("last_name", row.get("filerLastName", "")))
-                member = f"{first} {last}".strip() or row.get("filerName", row.get("name", "Unknown"))
-                filing_date = row.get("filingDate", row.get("filing_date", row.get("dateReceived", "")))
-                filing_type = row.get("reportType", row.get("type", ""))
-                detail_url = row.get("url", row.get("detailUrl", row.get("link", "")))
-                if detail_url and not detail_url.startswith("http"):
-                    detail_url = "https://www.oge.gov" + detail_url
+            if isinstance(row, dict):
+                # OGE DataTables dict format:
+                #   type: HTML <a href='...PDF...'>278 Transaction</a>
+                #   name: "Trump, Donald J"
+                #   agency, title, level, docDate, amended
+                type_html = str(row.get("type", ""))
+                link_m = re.search(r"href=['\"]([^'\"]+\.pdf)['\"]", type_html, re.IGNORECASE)
+                pdf_url = link_m.group(1) if link_m else ""
+                filing_type = re.sub(r"<[^>]+>", "", type_html).strip()  # "278 Transaction" or "Annual (2026)"
+                member = str(row.get("name", "Trump, Donald J")).strip()
+                doc_date = str(row.get("docDate", "")).split("T")[0]  # "2026-07-01"
+
+            elif isinstance(row, list):
+                # Fallback list format: [date, title, type, name_html, ...]
+                type_html = str(row[2]) if len(row) > 2 else ""
+                link_m = re.search(r"href=['\"]([^'\"]+\.pdf)['\"]", type_html, re.IGNORECASE)
+                pdf_url = link_m.group(1) if link_m else ""
+                filing_type = re.sub(r"<[^>]+>", "", type_html).strip()
+                name_html = str(row[3]) if len(row) > 3 else ""
+                member = re.sub(r"<[^>]+>", "", name_html).strip() or "Donald Trump"
+                doc_date = re.sub(r"<[^>]+>", "", str(row[0])).strip().split("T")[0]
             else:
                 continue
 
-            if "trump" in member.lower():
+            # Only keep 278-T periodic transaction reports (skip annual 278)
+            if "transaction" not in filing_type.lower() and "278-t" not in filing_type.lower():
+                log(f"  Skipping non-PTR filing: {filing_type!r}")
+                continue
+
+            if "trump" in member.lower() and pdf_url:
                 filings.append({
-                    "member": member,
-                    "detail_url": detail_url,
-                    "filing_date": filing_date,
+                    "member": "Donald Trump",
+                    "pdf_url": pdf_url,
+                    "filing_date": doc_date,
                     "filing_type": filing_type,
                 })
-                log(f"  Filing: {member}  type={filing_type}  date={filing_date}  url={detail_url[:60]}")
+                log(f"  PTR: {member}  {filing_type}  {doc_date}  {pdf_url[-60:]}")
 
     # --- Fallback: try to find filing links directly on the rendered page ---
     if not filings:
@@ -364,91 +368,26 @@ def _search_oge(page, from_str: str, to_str: str) -> list:
     return filings
 
 
-def _extract_trades_from_filing(page, filing: dict) -> list:
-    """Navigate to filing detail page and extract trade transactions."""
+def _extract_trades_from_filing(filing: dict) -> list:
+    """Download the 278-T PDF directly and parse trade transactions from it."""
     member = filing.get("member", "Donald Trump")
     filing_date = filing.get("filing_date", "")
-    detail_url = filing.get("detail_url", "")
+    pdf_url = filing.get("pdf_url", "")
 
-    if not detail_url:
-        log(f"  Skipping {member} — no detail URL")
+    if not pdf_url:
+        log(f"  Skipping {member} — no PDF URL")
         return []
 
-    captured_pdf = {}
-    captured_json = {}
-
-    def handle_response(response):
-        ct = response.headers.get("content-type", "")
-        url = response.url
-        if "pdf" in ct.lower():
-            log(f"    PDF intercepted: {url[-60:]}")
-            captured_pdf["bytes"] = response.body()
-        elif "json" in ct.lower() and any(k in url for k in ("transaction", "trade", "asset")):
-            log(f"    JSON intercepted: {url[-60:]}")
-            captured_json["data"] = response.body()
-            captured_json["url"] = url
-
-    page.on("response", handle_response)
+    log(f"  Downloading PDF: {pdf_url[-70:]}")
     try:
-        log(f"  Navigating to filing: {detail_url[-70:]}")
-        page.goto(detail_url, wait_until="networkidle", timeout=25000)
-        log(f"    Title: {page.title()!r}")
-    except PWTimeout:
-        log(f"    networkidle timeout — continuing")
+        resp = requests.get(pdf_url, headers=HEADERS, timeout=30)
+        resp.raise_for_status()
     except Exception as e:
-        log(f"    Nav error: {e}")
-    finally:
-        page.remove_listener("response", handle_response)
+        log(f"  PDF download failed: {e}")
+        return []
 
-    # PDF fallback
-    if "bytes" in captured_pdf:
-        trades = _parse_ptr_pdf(captured_pdf["bytes"], member, filing_date)
-        log(f"  {member}: {len(trades)} trades from PDF")
-        return trades
-
-    # JSON transaction data
-    if "data" in captured_json:
-        try:
-            data = json.loads(captured_json["data"])
-            log(f"  JSON data: {json.dumps(data)[:400]}")
-            rows = data if isinstance(data, list) else data.get("transactions", data.get("data", []))
-            trades = []
-            for row in rows:
-                ticker = (row.get("ticker") or row.get("symbol") or "N/A").strip()
-                if not re.match(r"^[A-Z]{1,5}$", ticker):
-                    ticker = "N/A"
-                date_str = row.get("transactionDate", row.get("transaction_date", row.get("date", "")))
-                tx_date = None
-                for fmt in ["%m/%d/%Y", "%Y-%m-%d"]:
-                    try:
-                        tx_date = datetime.strptime(date_str, fmt)
-                        break
-                    except ValueError:
-                        continue
-                if not tx_date:
-                    continue
-                amount_raw = row.get("amount", row.get("amountRange", ""))
-                trades.append({
-                    "member": member,
-                    "owner": row.get("owner", "Filer"),
-                    "asset": row.get("assetName", row.get("asset", "")),
-                    "ticker": ticker,
-                    "type": _normalize_type(row.get("transactionType", row.get("type", ""))),
-                    "date": tx_date.strftime("%Y-%m-%d"),
-                    "filing_date": filing_date,
-                    "amount_raw": amount_raw,
-                    "amount_lower": _amount_lower(amount_raw),
-                })
-            log(f"  {member}: {len(trades)} trades from JSON")
-            return trades
-        except Exception as e:
-            log(f"  JSON parse error: {e}")
-
-    # HTML table fallback
-    html = page.content()
-    log(f"  Attempting HTML table parse ({len(html)} bytes)")
-    trades = _parse_transactions_html(html, member, filing_date)
-    log(f"  {member}: {len(trades)} trades from HTML table")
+    trades = _parse_ptr_pdf(resp.content, member, filing_date)
+    log(f"  {member} ({filing_date}): {len(trades)} trades from PDF ({len(resp.content)} bytes)")
     return trades
 
 
@@ -469,7 +408,7 @@ def fetch_trump_trades(from_date: datetime, to_date: datetime) -> list:
             filing_stubs = _search_oge(page, from_str, to_str)
             all_trades = []
             for stub in filing_stubs[:MAX_FILINGS]:
-                trades = _extract_trades_from_filing(page, stub)
+                trades = _extract_trades_from_filing(stub)
                 all_trades.extend(trades)
         finally:
             browser.close()
