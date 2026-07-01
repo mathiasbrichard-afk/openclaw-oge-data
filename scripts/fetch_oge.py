@@ -85,21 +85,31 @@ def _parse_ptr_pdf(pdf_bytes: bytes, member: str, filing_date: str = "") -> list
     """
     trades = []
 
+    # OCR year correction: some scanned PDFs read "2026" as "2028"
+    try:
+        filing_year = datetime.strptime(filing_date, "%Y-%m-%d").year if filing_date else datetime.now().year
+    except ValueError:
+        filing_year = datetime.now().year
+
     # Normalise OCR amount: "$1 001 -$15 000" → "$1,001 - $15,000"
     def _clean_amount(s: str) -> str:
         s = re.sub(r"\$\s*([\d ]+)", lambda m: "$" + m.group(1).replace(" ", ","), s)
+        s = re.sub(r",\s*-", " -", s)         # strip trailing comma before dash
         s = re.sub(r"\s*[•·–-]+\s*", " - ", s)
         return s.strip()
 
     def _parse_date(s: str) -> datetime | None:
-        # Strip any "Data\n" or similar OCR prefix; extract first date pattern
         m = re.search(r"\b(\d{1,2}[/\-]\d{1,2}[/\-]\d{2,4})\b", s)
         if not m:
             return None
         raw = m.group(1).replace("-", "/")
         for fmt in ["%m/%d/%Y", "%m/%d/%y"]:
             try:
-                return datetime.strptime(raw, fmt)
+                d = datetime.strptime(raw, fmt)
+                # Correct OCR year errors (e.g. "2026" misread as "2028")
+                if d.year > filing_year:
+                    d = d.replace(year=filing_year)
+                return d
             except ValueError:
                 continue
         return None
