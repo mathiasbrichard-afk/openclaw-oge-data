@@ -252,15 +252,23 @@ def _search_oge(page, from_str: str, to_str: str) -> list:
     # --- Filter using DataTables column filter inputs ---
     # The OGE table uses DataTables with per-column filter inputs:
     #   Filter Date Added | Filter Title | Filter Type | Filter Name | Filter Agency | Filter Level
+    def _is_datatable_json(response):
+        return "json" in response.headers.get("content-type", "").lower()
+
     name_filter = page.locator("input[placeholder='Filter Name']")
     if name_filter.count() > 0:
         log("  Filling 'Filter Name' with 'Trump'")
         name_filter.first.fill("Trump")
-        name_filter.first.press("Enter")
+        # Wait for DataTables to fire its AJAX call and capture the response
         try:
-            page.wait_for_load_state("networkidle", timeout=15000)
+            with page.expect_response(_is_datatable_json, timeout=12000) as resp_info:
+                name_filter.first.press("Enter")
+            resp = resp_info.value
+            body = resp.body()
+            captured_responses.append({"url": resp.url, "status": resp.status, "body": body, "ct": resp.headers.get("content-type","")})
+            log(f"  Captured filter response: {resp.url[-80:]}  {len(body)} bytes")
         except PWTimeout:
-            pass
+            log("  Timeout waiting for DataTables filter response")
     else:
         log("  WARNING: 'Filter Name' input not found — dumping all inputs for diagnosis")
         for inp in page.locator("input, select").all():
@@ -268,17 +276,6 @@ def _search_oge(page, from_str: str, to_str: str) -> list:
                 log(f"    id={inp.get_attribute('id')!r} placeholder={inp.get_attribute('placeholder')!r}")
             except Exception:
                 pass
-
-    # Also try filtering by type — PTR / 278-T
-    type_filter = page.locator("input[placeholder='Filter Type']")
-    if type_filter.count() > 0:
-        type_filter.first.fill("278-T")
-        type_filter.first.press("Enter")
-        try:
-            page.wait_for_load_state("networkidle", timeout=10000)
-        except PWTimeout:
-            pass
-        log("  Filtered type by '278-T'")
 
     # --- Parse captured XHR responses ---
     log(f"  Total XHR responses captured: {len(captured_responses)}")
