@@ -28,7 +28,7 @@ OGE_BASE = "https://www.oge.gov/web/OGE.nsf"
 OGE_SEARCH = f"{OGE_BASE}/Officials%20Individual%20Disclosures%20Search%20Collection?OpenForm"
 OUTPUT = Path("data/trump_trades.json")
 LOOKBACK_DAYS = 90
-MAX_FILINGS = 5  # temporary cap for PDF structure debugging; raise to 50 once parser is confirmed
+MAX_FILINGS = 50
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -72,125 +72,102 @@ def _parse_ptr_pdf(pdf_bytes: bytes, member: str, filing_date: str = "") -> list
     """
     Parse an OGE Form 278-T (Periodic Transaction Report) PDF.
 
-    OGE 278-T Part 2 table columns:
-      No. | Date | Description of Asset (Type of Asset) | Nature of Transaction | Amount
+    Confirmed column layout from pdfplumber extraction (6 cols):
+      0: Row # (may contain multiple #s, or None)
+      1: Asset description / company name (CAPS)
+      2: Transaction type ("sale", "purchase" — sometimes OCR-garbled)
+      3: Date ("5/15/2026", sometimes prefixed "Data\n")
+      4: Notification flag ("No", "Yes", or None)
+      5: Amount range ("$1 001 -$15 000" — spaces instead of commas due to OCR)
+
+    OGE 278-T does NOT include ticker symbols. We store company name as asset
+    and set ticker to "N/A" (growth lookup skipped for unknown tickers).
     """
     trades = []
+
+    # Normalise OCR amount: "$1 001 -$15 000" → "$1,001 - $15,000"
+    def _clean_amount(s: str) -> str:
+        s = re.sub(r"\$\s*([\d ]+)", lambda m: "$" + m.group(1).replace(" ", ","), s)
+        s = re.sub(r"\s*[•·–-]+\s*", " - ", s)
+        return s.strip()
+
+    def _parse_date(s: str) -> datetime | None:
+        # Strip any "Data\n" or similar OCR prefix; extract first date pattern
+        m = re.search(r"\b(\d{1,2}[/\-]\d{1,2}[/\-]\d{2,4})\b", s)
+        if not m:
+            return None
+        raw = m.group(1).replace("-", "/")
+        for fmt in ["%m/%d/%Y", "%m/%d/%y"]:
+            try:
+                return datetime.strptime(raw, fmt)
+            except ValueError:
+                continue
+        return None
+
+    def _parse_type(s: str) -> str:
+        s = s.lower().replace("\n", " ")
+        if re.search(r"pur|buy|purch", s):
+            return "Buy"
+        if re.search(r"sal|sell", s):
+            return "Sell"
+        if "exchange" in s or "xch" in s:
+            return "Exchange"
+        return "Unknown"
+
     try:
         with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
             log(f"    PDF: {len(pdf.pages)} page(s)")
             for page_num, page in enumerate(pdf.pages):
-                tables = page.extract_tables()
-                if not tables:
-                    # Try plain text extraction to find transaction data
-                    text = page.extract_text() or ""
-                    if any(kw in text for kw in ("transaction", "purchase", "sale", "278-T")):
-                        log(f"    Page {page_num+1} text preview: {text[:400]!r}")
-                    continue
-
-                for tbl_idx, table in enumerate(tables):
-                    # Log first 3 rows of each table for structure discovery
-                    for ri, row in enumerate(table[:3]):
-                        log(f"    P{page_num+1} T{tbl_idx} R{ri}: {[str(c)[:30] if c else None for c in row]}")
-
-                    # Detect OGE 278-T table by header keywords
-                    header_text = " ".join(str(c) for c in (table[0] or []) if c).lower()
-                    is_278t = any(kw in header_text for kw in (
-                        "nature of transaction", "description of asset", "date of transaction",
-                        "amount of transaction", "transaction date",
-                    ))
-
-                    # Also check if header is missing but row format matches 278-T
+                for table in page.extract_tables():
                     for row in table:
-                        if not row or not any(row):
+                        if not row or len(row) < 4:
                             continue
-                        row_text = " ".join(str(c) for c in row if c)
-
-                        # OGE 278-T: detect header row
-                        if any(kw in row_text.lower() for kw in (
-                            "nature of transaction", "description of asset", "date of transaction"
-                        )):
-                            is_278t = True
-                            continue
-
-                        if not is_278t:
-                            continue
-
-                        # Skip non-data rows
-                        if any(kw in row_text for kw in ("CERTIFY", "page", "Page", "Part ")):
-                            continue
-
-                        # OGE 278-T row: [No., Date, Asset Description (ticker in parens), Nature, Amount]
-                        # Also handles scanned pages where columns merge
                         cells = [str(c or "").strip() for c in row]
-                        n_cells = len([c for c in cells if c])
-                        if n_cells < 2:
+
+                        # Column 1 must look like a company name (2+ words, mostly alpha/space)
+                        asset_raw = cells[1].replace("\n", " ").strip()
+                        if len(asset_raw) < 3:
+                            continue
+                        # Skip header/label rows
+                        if any(kw in asset_raw.lower() for kw in (
+                            "description", "filer", "donald", "transaction", "trump", "certif"
+                        )):
+                            continue
+                        # Must be mostly uppercase alpha (company name heuristic)
+                        alpha = re.sub(r"[^A-Za-z]", "", asset_raw)
+                        if not alpha or sum(c.isupper() for c in alpha) / len(alpha) < 0.6:
                             continue
 
-                        # Try to find date, ticker, type, amount from the row
-                        date_str = ""
-                        ticker = "N/A"
-                        tx_type = ""
-                        amount_raw = ""
-                        asset = ""
-
-                        if len(cells) >= 5:
-                            # Standard column layout: [no, date, asset, nature, amount]
-                            date_str = cells[1]
-                            asset_raw = cells[2]
-                            tx_type = cells[3]
-                            amount_raw = cells[4] if len(cells) > 4 else ""
-                        elif len(cells) == 4:
-                            date_str = cells[0]
-                            asset_raw = cells[1]
-                            tx_type = cells[2]
-                            amount_raw = cells[3]
-                        else:
-                            # Try to extract from merged text
-                            asset_raw = row_text
-                            date_m = re.search(r"\b(\d{1,2}/\d{1,2}/\d{2,4})\b", row_text)
-                            if date_m:
-                                date_str = date_m.group(1)
-                            amount_m = re.search(r"\$[\d,]+\s*[-–]\s*\$[\d,]+", row_text)
-                            if amount_m:
-                                amount_raw = amount_m.group()
-
-                        # Extract ticker symbol from asset description
-                        ticker_m = re.search(r"\(([A-Z]{1,5})\)", asset_raw)
-                        ticker = ticker_m.group(1) if ticker_m else "N/A"
-                        asset = re.sub(r"\s*\([A-Z]{1,5}\).*", "", asset_raw).replace("\n", " ").strip()
-
-                        # Parse transaction date
-                        tx_date = None
-                        for fmt in ["%m/%d/%Y", "%m/%d/%y", "%Y-%m-%d"]:
-                            try:
-                                tx_date = datetime.strptime(date_str.strip(), fmt)
-                                break
-                            except ValueError:
+                        # Column 2: transaction type
+                        tx_type = _parse_type(cells[2])
+                        if tx_type == "Unknown":
+                            # Some pages have type in col 1 when col layout shifts
+                            tx_type = _parse_type(cells[1])
+                            if tx_type == "Unknown":
                                 continue
+
+                        # Column 3: date
+                        date_str = cells[3]
+                        # Try col 4 as fallback (sometimes cols shift)
+                        tx_date = _parse_date(date_str) or (
+                            _parse_date(cells[4]) if len(cells) > 4 else None
+                        )
                         if not tx_date:
                             continue
 
-                        # Determine transaction type
-                        tx_type_lower = tx_type.lower()
-                        if not tx_type_lower:
-                            # Try to infer from row text
-                            tx_type_lower = row_text.lower()
-                        if "purchase" in tx_type_lower or "buy" in tx_type_lower:
-                            norm_type = "Buy"
-                        elif "sale" in tx_type_lower or "sell" in tx_type_lower:
-                            norm_type = "Sell"
-                        elif "exchange" in tx_type_lower:
-                            norm_type = "Exchange"
-                        else:
-                            norm_type = tx_type.strip() or "Unknown"
+                        # Column 5: amount (may span cols or be in col 5)
+                        amount_raw = ""
+                        for idx in (5, 4, 3):
+                            if idx < len(cells) and "$" in cells[idx]:
+                                amount_raw = _clean_amount(cells[idx])
+                                break
 
                         trades.append({
                             "member": member,
                             "owner": "Filer",
-                            "asset": asset or asset_raw,
-                            "ticker": ticker,
-                            "type": norm_type,
+                            "asset": asset_raw,
+                            "ticker": "N/A",   # OGE 278-T uses company names, not tickers
+                            "type": tx_type,
                             "date": tx_date.strftime("%Y-%m-%d"),
                             "filing_date": filing_date,
                             "amount_raw": amount_raw,
@@ -199,6 +176,8 @@ def _parse_ptr_pdf(pdf_bytes: bytes, member: str, filing_date: str = "") -> list
 
     except Exception as e:
         log(f"  PDF parse error: {e}")
+
+    log(f"    Parsed {len(trades)} trades")
     return trades
 
 
