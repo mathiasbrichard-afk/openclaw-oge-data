@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-06T21:24:16Z",
+  "last_updated": "2026-07-07T06:02:20Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -373,28 +373,6 @@
       "date": "2026-04-09",
       "filing_date": "2026-07-01",
       "amount_raw": "$100,001, - $250,000\n$1,001 - $15,000",
-      "amount_lower": 100001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "ZOOM COMMUNICATIONS INC CL A",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-04-07",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$1,001 - $15,000",
-      "amount_lower": 1001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "FIDELITY NAT\\. INFORMATION",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-04-07",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$100,001 - $250,000",
       "amount_lower": 100001
     }
   ]
