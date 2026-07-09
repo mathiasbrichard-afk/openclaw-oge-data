@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-08T21:00:21Z",
+  "last_updated": "2026-07-09T06:04:15Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -363,17 +363,6 @@
       "filing_date": "2026-07-01",
       "amount_raw": "$50,001 - $100,000",
       "amount_lower": 50001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "TERADYNEINC",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-04-09",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$100,001, - $250,000\n$1,001 - $15,000",
-      "amount_lower": 100001
     }
   ]
 }
