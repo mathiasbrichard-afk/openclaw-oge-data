@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-09T21:17:02Z",
+  "last_updated": "2026-07-10T05:58:34Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -341,28 +341,6 @@
       "filing_date": "2026-07-01",
       "amount_raw": "$15,001, - $50,000",
       "amount_lower": 15001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "WYNN RESORTS LTD",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-04-10",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$1001 - $15000",
-      "amount_lower": 1001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "ZOETIS INC CL A",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-04-10",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$50,001 - $100,000",
-      "amount_lower": 50001
     }
   ]
 }
