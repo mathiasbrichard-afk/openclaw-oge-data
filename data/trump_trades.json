@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-14T20:53:53Z",
+  "last_updated": "2026-07-15T04:45:49Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -308,28 +308,6 @@
       "filing_date": "2026-07-01",
       "amount_raw": "$1,001 - $15,000",
       "amount_lower": 1001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "salo OMNICOM GROUP INC lourchaso OMNICOM GROUP INC salo ON SEMICONDUCTOR CORP lourchaso ON SEMICONDUCTOR CORP lourchase",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-04-15",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$500,001, - $1,000,000",
-      "amount_lower": 500001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "WALMARTINC l",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-04-15",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$15001 - $50000\n$1,001 - $15,000",
-      "amount_lower": 15001
     }
   ]
 }
