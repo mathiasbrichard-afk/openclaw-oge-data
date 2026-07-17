@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-16T20:51:48Z",
+  "last_updated": "2026-07-17T04:58:52Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -275,39 +275,6 @@
       "filing_date": "2026-07-01",
       "amount_raw": "",
       "amount_lower": 0
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "VISII Inc Com Cl A",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-04-17",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$1,000,001 - $5,ODO 000",
-      "amount_lower": 1000001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "INTERCONTINENTALEXCHANGE INC",
-      "ticker": "N/A",
-      "type": "Exchange",
-      "date": "2026-04-17",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$50,001 - $100,000",
-      "amount_lower": 50001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "WORKDAY INC CLASS A",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-04-17",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$1,001 - $15,000",
-      "amount_lower": 1001
     }
   ]
 }
