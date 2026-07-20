@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-19T20:40:02Z",
+  "last_updated": "2026-07-20T05:34:16Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -261,17 +261,6 @@
       "ticker": "N/A",
       "type": "Buy",
       "date": "2026-04-27",
-      "filing_date": "2026-07-01",
-      "amount_raw": "",
-      "amount_lower": 0
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "WHIRLPOOL CORP",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-04-20",
       "filing_date": "2026-07-01",
       "amount_raw": "",
       "amount_lower": 0
