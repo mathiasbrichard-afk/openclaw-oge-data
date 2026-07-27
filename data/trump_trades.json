@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-26T20:49:18Z",
+  "last_updated": "2026-07-27T05:44:11Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -242,28 +242,6 @@
       "filing_date": "2026-07-01",
       "amount_raw": "$50,001, - $100,000",
       "amount_lower": 50001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "ZEBRA TECHNOLOGIES CORP CL A",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-04-27",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$50,001 - $100,000",
-      "amount_lower": 50001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "MARTIN MARIETTA MATERIALS INC",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-04-27",
-      "filing_date": "2026-07-01",
-      "amount_raw": "",
-      "amount_lower": 0
     }
   ]
 }
