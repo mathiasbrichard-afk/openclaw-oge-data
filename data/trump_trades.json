@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-27T21:04:45Z",
+  "last_updated": "2026-07-28T04:58:57Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -220,28 +220,6 @@
       "filing_date": "2026-07-01",
       "amount_raw": "$15,001, - $50,000",
       "amount_lower": 15001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "WEXINC",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-04-28",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$1,001 - $15,000",
-      "amount_lower": 1001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "CPTI. ONE FINL CORP NTS 06.3n% 060834 DTD060823 FC120823 B/E YTM = 5.467",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-04-28",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$50,001, - $100,000",
-      "amount_lower": 50001
     }
   ]
 }
