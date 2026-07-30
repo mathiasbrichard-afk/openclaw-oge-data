@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-29T20:45:51Z",
+  "last_updated": "2026-07-30T04:53:23Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -198,28 +198,6 @@
       "filing_date": "2026-07-01",
       "amount_raw": "$1,000,001, - $5,000,000\n$500,001 - $1,000,000",
       "amount_lower": 1000001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "WORTHINGTON ENTERPRI",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-04-30",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$15,001 - $50,000",
-      "amount_lower": 15001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "UFP TECHNOLOGIES INC",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-04-30",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$15,001, - $50,000",
-      "amount_lower": 15001
     }
   ]
 }
