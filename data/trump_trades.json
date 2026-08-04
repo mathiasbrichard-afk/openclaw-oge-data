@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-03T20:57:29Z",
+  "last_updated": "2026-08-04T04:58:27Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -176,28 +176,6 @@
       "filing_date": "2026-07-01",
       "amount_raw": "$1,001, - $15,000",
       "amount_lower": 1001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "ISHARES CORE MSCI EMERGING MARKETS ETF",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-05-05",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$500,001 - $1,000,000",
-      "amount_lower": 500001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "ISHARES CURRENCY HEDGED",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-05-05",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$1,000,001, - $5,000,000\n$500,001 - $1,000,000",
-      "amount_lower": 1000001
     }
   ]
 }
