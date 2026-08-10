@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-09T20:23:15Z",
+  "last_updated": "2026-08-10T03:46:45Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -140,28 +140,6 @@
       "ticker": "N/A",
       "type": "Sell",
       "date": "2026-05-14",
-      "filing_date": "2026-07-01",
-      "amount_raw": "",
-      "amount_lower": 0
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "YUM BRANDS INC",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-05-11",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$1,001 - $15000",
-      "amount_lower": 1001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "FAIR ISAAC INC FORMERLY FAIR ISAAC & CO INC IPurchaSO FIRSTENERGY CORP sale FISERV INC salo FORTIVE CORPORATION sale GALLAGHER ARTHUR J & CO sale",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-05-11",
       "filing_date": "2026-07-01",
       "amount_raw": "",
       "amount_lower": 0
