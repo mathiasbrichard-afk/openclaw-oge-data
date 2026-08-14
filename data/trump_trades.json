@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-13T20:34:40Z",
+  "last_updated": "2026-08-14T04:00:41Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -110,28 +110,6 @@
       "filing_date": "2026-07-01",
       "amount_raw": "$50,001, - $100,000",
       "amount_lower": 50001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "VIASATINC",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-05-15",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$15,001 - $50,000",
-      "amount_lower": 15001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "PUBLIC SERVICE ENTERPRISE GROUP INC",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-05-15",
-      "filing_date": "2026-07-01",
-      "amount_raw": "No $1,001 - $15,000",
-      "amount_lower": 1001
     }
   ]
 }
