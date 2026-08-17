@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-16T20:14:09Z",
+  "last_updated": "2026-08-17T02:54:06Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -77,28 +77,6 @@
       "filing_date": "2026-07-01",
       "amount_raw": "",
       "amount_lower": 0
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "VERIZON COMMUNICATIONS I",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-05-18",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$1,001 - $15,000",
-      "amount_lower": 1001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "PALO ALTO NETWORKS INC",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-05-18",
-      "filing_date": "2026-07-01",
-      "amount_raw": "No $100,001, - $250,000",
-      "amount_lower": 100001
     }
   ]
 }
