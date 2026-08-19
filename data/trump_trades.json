@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-18T20:15:27Z",
+  "last_updated": "2026-08-19T02:51:30Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -52,17 +52,6 @@
       "ticker": "N/A",
       "type": "Sell",
       "date": "2026-05-21",
-      "filing_date": "2026-07-01",
-      "amount_raw": "",
-      "amount_lower": 0
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "MEDTRONIC PLC",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-05-20",
       "filing_date": "2026-07-01",
       "amount_raw": "",
       "amount_lower": 0
