@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-19T20:22:12Z",
+  "last_updated": "2026-08-20T02:51:21Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -44,17 +44,6 @@
       "filing_date": "2026-07-01",
       "amount_raw": "No $15,001 - $50,000",
       "amount_lower": 15001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "!SHARES U.S. TREASURY BOND ETF Microsoft Com l NIKE INC CLASS CLASS B",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-05-21",
-      "filing_date": "2026-07-01",
-      "amount_raw": "",
-      "amount_lower": 0
     }
   ]
 }
