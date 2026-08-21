@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-20T20:20:35Z",
+  "last_updated": "2026-08-21T02:57:07Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -22,28 +22,6 @@
       "filing_date": "2026-07-01",
       "amount_raw": "$100,001 - $250,000",
       "amount_lower": 100001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "THE MOSAIC CO",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-05-22",
-      "filing_date": "2026-07-01",
-      "amount_raw": "No $15,001 - $50,000",
-      "amount_lower": 15001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "TEMPUS Al INC CLASS CLASS A",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-05-22",
-      "filing_date": "2026-07-01",
-      "amount_raw": "No $15,001 - $50,000",
-      "amount_lower": 15001
     }
   ]
 }
