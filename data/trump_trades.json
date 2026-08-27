@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-26T22:38:12Z",
+  "last_updated": "2026-08-27T12:13:44Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -8,17 +8,6 @@
       "ticker": "N/A",
       "type": "Buy",
       "date": "2026-05-29",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$100,001 - $250,000",
-      "amount_lower": 100001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "TRJ POINTE HOMES INC",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-05-28",
       "filing_date": "2026-07-01",
       "amount_raw": "$100,001 - $250,000",
       "amount_lower": 100001
