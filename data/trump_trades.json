@@ -1,16 +1,4 @@
 {
-  "last_updated": "2026-08-27T23:26:30Z",
-  "trades": [
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "JPMORGAN CHASE & CO PERP NT 6.5000%",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-05-29",
-      "filing_date": "2026-07-01",
-      "amount_raw": "$100,001 - $250,000",
-      "amount_lower": 100001
-    }
-  ]
+  "last_updated": "2026-08-28T13:39:16Z",
+  "trades": []
 }
