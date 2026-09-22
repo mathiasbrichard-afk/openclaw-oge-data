@@ -1,4 +1,269 @@
 {
-  "last_updated": "2026-09-22T07:08:50Z",
-  "trades": []
+  "last_updated": "2026-09-22T12:59:43Z",
+  "trades": [
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "ALLY FINL INC PERP -0 NT 7.1000%",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-07-31",
+      "filing_date": "2026-09-22",
+      "amount_raw": "",
+      "amount_lower": 0
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "MERCK & CO. INC.",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-07-31",
+      "filing_date": "2026-09-22",
+      "amount_raw": "$250,001, - $500,000",
+      "amount_lower": 250001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "CASELLA WASTE SYS INC CLASS A",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-07-29",
+      "filing_date": "2026-09-22",
+      "amount_raw": "no $50,001, - $100,000",
+      "amount_lower": 50001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "COOK CNTY IL SALES TAX RV BE/R/ 5 DUE 111529 DTD 082526 FC 111526 2.960%",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-07-29",
+      "filing_date": "2026-09-22",
+      "amount_raw": "",
+      "amount_lower": 0
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "BERKSHIRE HATHAWAY CLASS B",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-07-27",
+      "filing_date": "2026-09-22",
+      "amount_raw": "no $15,001 - $50,000",
+      "amount_lower": 15001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "MICROSOFT CORP",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-07-27",
+      "filing_date": "2026-09-22",
+      "amount_raw": "",
+      "amount_lower": 0
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "TESLA INC MICROSOFT CORP",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-07-24",
+      "filing_date": "2026-09-22",
+      "amount_raw": "no $1,001 - $15,000",
+      "amount_lower": 1001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "SNOWFLAKE INC CLASS A I",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-07-24",
+      "filing_date": "2026-09-22",
+      "amount_raw": "no S1 001 - $15,ooo",
+      "amount_lower": 1
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "ORACLE CORPORATION",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-07-23",
+      "filing_date": "2026-09-22",
+      "amount_raw": "o $100,001 - $250,000",
+      "amount_lower": 100001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "PALANTIR TECHNOLOGIES INC",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-07-23",
+      "filing_date": "2026-09-22",
+      "amount_raw": "no $1,001 - $15,000\nno $1,001 - $15,000",
+      "amount_lower": 1001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "GULFPORT ENERGY CORP EQU CLASS EQUITY I",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-07-22",
+      "filing_date": "2026-09-22",
+      "amount_raw": "no $15,001 - $50,000",
+      "amount_lower": 15001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "MOLINA HEALTHCARE INC",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-07-22",
+      "filing_date": "2026-09-22",
+      "amount_raw": "no $250,001 - $500,000",
+      "amount_lower": 250001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "ZOETISINC",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-07-20",
+      "filing_date": "2026-09-22",
+      "amount_raw": "no $500,001 - $1,000,000",
+      "amount_lower": 500001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "NXP SEMICONDUCTORS NV",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-07-20",
+      "filing_date": "2026-09-22",
+      "amount_raw": "$100,001 - $250,000",
+      "amount_lower": 100001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "FOX CORP CL A",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-07-17",
+      "filing_date": "2026-09-22",
+      "amount_raw": "$1,001 - $15000",
+      "amount_lower": 1001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "BRIGHTSPRING HEALTH SVCS",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-07-17",
+      "filing_date": "2026-09-22",
+      "amount_raw": "no $100,001, - $250,000",
+      "amount_lower": 100001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "BREVARD CNTY FL HSG FIN AUTH MLTIFAM HSG REV EMERALD PLACE APTS B/E 3.30 % Due Feb 1, 2028",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-07-16",
+      "filing_date": "2026-09-22",
+      "amount_raw": "$50,001 - $100,000",
+      "amount_lower": 50001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "GENUINE PARTS CO",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-07-16",
+      "filing_date": "2026-09-22",
+      "amount_raw": "$500,001 - $1,000,000",
+      "amount_lower": 500001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "LEE CNTY FL SCH BRD SR A RV BE/R/ 5 DUE 080130 DTD 080326 FC 0201272.750% [ AQUARION WTR AUTH CT WTR SR D RV BE/R/ 5 DUE 080134 DTD 072326 FC 020127 3.543% [",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-07-10",
+      "filing_date": "2026-09-22",
+      "amount_raw": "$250,001, - $500,000",
+      "amount_lower": 250001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "ARIZONA IDA NATL CHTR SCH REVLVG SR EQUITABLE SCH FD SER A B/E 5.00 % Due Nov 1, 2026",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-07-09",
+      "filing_date": "2026-09-22",
+      "amount_raw": "S50 001 - $100000",
+      "amount_lower": 50
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "AMER EXPRESS CO l",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-07-08",
+      "filing_date": "2026-09-22",
+      "amount_raw": "$15,001 - $50000",
+      "amount_lower": 15001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "PRICE T ROWE GROUP INC",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-07-08",
+      "filing_date": "2026-09-22",
+      "amount_raw": "",
+      "amount_lower": 0
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "BERKS CNTY PA SER A B/E 4.00 % Due Nov 15, 2029 I ourchaso EAST ALCINE MGMT DIST TX SALES TAX REV RFDG AGM B/E PTC 4.00 % Due Feb 15, 2027 lourchaso",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-07-07",
+      "filing_date": "2026-09-22",
+      "amount_raw": "$50,001 - $100,000",
+      "amount_lower": 50001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "MEMPHIS TN GENL IMPT RFDG B/E 4.00 % Due May 1, 2035",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-07-01",
+      "filing_date": "2026-09-22",
+      "amount_raw": "$100,001, - $250,000",
+      "amount_lower": 100001
+    }
+  ]
 }
