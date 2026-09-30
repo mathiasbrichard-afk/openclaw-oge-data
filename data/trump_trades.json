@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-29T23:20:09Z",
+  "last_updated": "2026-09-30T07:48:05Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -253,17 +253,6 @@
       "filing_date": "2026-09-22",
       "amount_raw": "$50,001 - $100,000",
       "amount_lower": 50001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "MEMPHIS TN GENL IMPT RFDG B/E 4.00 % Due May 1, 2035",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-07-01",
-      "filing_date": "2026-09-22",
-      "amount_raw": "$100,001, - $250,000",
-      "amount_lower": 100001
     }
   ]
 }
