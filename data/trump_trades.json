@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-05T21:29:23Z",
+  "last_updated": "2026-10-06T08:25:01Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -242,17 +242,6 @@
       "filing_date": "2026-09-22",
       "amount_raw": "",
       "amount_lower": 0
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "BERKS CNTY PA SER A B/E 4.00 % Due Nov 15, 2029 I ourchaso EAST ALCINE MGMT DIST TX SALES TAX REV RFDG AGM B/E PTC 4.00 % Due Feb 15, 2027 lourchaso",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-07-07",
-      "filing_date": "2026-09-22",
-      "amount_raw": "$50,001 - $100,000",
-      "amount_lower": 50001
     }
   ]
 }
