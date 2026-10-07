@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-06T23:29:59Z",
+  "last_updated": "2026-10-07T08:01:00Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -220,28 +220,6 @@
       "filing_date": "2026-09-22",
       "amount_raw": "S50 001 - $100000",
       "amount_lower": 50
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "AMER EXPRESS CO l",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-07-08",
-      "filing_date": "2026-09-22",
-      "amount_raw": "$15,001 - $50000",
-      "amount_lower": 15001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "PRICE T ROWE GROUP INC",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-07-08",
-      "filing_date": "2026-09-22",
-      "amount_raw": "",
-      "amount_lower": 0
     }
   ]
 }
