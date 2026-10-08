@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-07T23:58:02Z",
+  "last_updated": "2026-10-08T08:15:11Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -209,17 +209,6 @@
       "filing_date": "2026-09-22",
       "amount_raw": "$250,001, - $500,000",
       "amount_lower": 250001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "ARIZONA IDA NATL CHTR SCH REVLVG SR EQUITABLE SCH FD SER A B/E 5.00 % Due Nov 1, 2026",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-07-09",
-      "filing_date": "2026-09-22",
-      "amount_raw": "S50 001 - $100000",
-      "amount_lower": 50
     }
   ]
 }
