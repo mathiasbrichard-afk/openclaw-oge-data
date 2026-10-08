@@ -1,6 +1,160 @@
 {
-  "last_updated": "2026-10-08T08:15:11Z",
+  "last_updated": "2026-10-08T19:36:10Z",
   "trades": [
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "PAPA JOHNS INTL INC",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-08-31",
+      "filing_date": "2026-10-08",
+      "amount_raw": "No $1,001 - $15,000\nNo $1,OD1 - $15000",
+      "amount_lower": 1001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "WALKER & DUNLOP INC",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-08-31",
+      "filing_date": "2026-10-08",
+      "amount_raw": "No $15,001 - $50,000",
+      "amount_lower": 15001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "JOBY AVIATION INC",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-08-28",
+      "filing_date": "2026-10-08",
+      "amount_raw": "No $15,001 - $50,000",
+      "amount_lower": 15001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "INTUmVE SURGICAL INC",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-08-28",
+      "filing_date": "2026-10-08",
+      "amount_raw": "$100.001 - $250,000",
+      "amount_lower": 100
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "EXPEDITORS INTL WASH INC",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-08-26",
+      "filing_date": "2026-10-08",
+      "amount_raw": "$15,001 - $50,000",
+      "amount_lower": 15001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "DELAWARE VALLEY PA 4\" POOL AUTH DUE U/01/36",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-08-25",
+      "filing_date": "2026-10-08",
+      "amount_raw": "No $1,000,001 - $5,000,000",
+      "amount_lower": 1000001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "SERVICENOW INC",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-08-24",
+      "filing_date": "2026-10-08",
+      "amount_raw": "No $1,001, - $15,000",
+      "amount_lower": 1001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "TXNM ENERGY INC",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-08-24",
+      "filing_date": "2026-10-08",
+      "amount_raw": "No $1,001 - $15000",
+      "amount_lower": 1001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "KKR&COINC",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-08-21",
+      "filing_date": "2026-10-08",
+      "amount_raw": "$250,001 - $500,000",
+      "amount_lower": 250001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "ADVANCED MICRO DEVICES INC",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-08-21",
+      "filing_date": "2026-10-08",
+      "amount_raw": "No $1,000,001 - $5,000,000",
+      "amount_lower": 1000001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "SPACE EXPLORATION TECHN SENIOR UNSEC\\iRED NOTES REGS DUE 07/lS/2031 0S.350%",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-08-18",
+      "filing_date": "2026-10-08",
+      "amount_raw": "",
+      "amount_lower": 0
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "SEMPRA",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-08-10",
+      "filing_date": "2026-10-08",
+      "amount_raw": "$1,001 - $15,000",
+      "amount_lower": 1001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "BOSTON SCIENTIFIC CORP l",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-08-10",
+      "filing_date": "2026-10-08",
+      "amount_raw": "$1,001 - $15,000",
+      "amount_lower": 1001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "DALLAS TX AREA RAPID TRAN SALES TAX REV RFDG SR LIEN BIE 5.00 % Due Dec 1. 2026 lnurchase",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-08-04",
+      "filing_date": "2026-10-08",
+      "amount_raw": "$100,001 - $250,000",
+      "amount_lower": 100001
+    },
     {
       "member": "Donald Trump",
       "owner": "Filer",
