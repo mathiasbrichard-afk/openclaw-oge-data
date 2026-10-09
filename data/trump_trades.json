@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-08T19:36:10Z",
+  "last_updated": "2026-10-09T00:04:59Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -352,17 +352,6 @@
       "filing_date": "2026-09-22",
       "amount_raw": "$500,001 - $1,000,000",
       "amount_lower": 500001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "LEE CNTY FL SCH BRD SR A RV BE/R/ 5 DUE 080130 DTD 080326 FC 0201272.750% [ AQUARION WTR AUTH CT WTR SR D RV BE/R/ 5 DUE 080134 DTD 072326 FC 020127 3.543% [",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-07-10",
-      "filing_date": "2026-09-22",
-      "amount_raw": "$250,001, - $500,000",
-      "amount_lower": 250001
     }
   ]
 }
