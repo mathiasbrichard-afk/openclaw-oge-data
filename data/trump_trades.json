@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-14T22:55:03Z",
+  "last_updated": "2026-10-15T06:49:41Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -330,28 +330,6 @@
       "filing_date": "2026-09-22",
       "amount_raw": "no $100,001, - $250,000",
       "amount_lower": 100001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "BREVARD CNTY FL HSG FIN AUTH MLTIFAM HSG REV EMERALD PLACE APTS B/E 3.30 % Due Feb 1, 2028",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-07-16",
-      "filing_date": "2026-09-22",
-      "amount_raw": "$50,001 - $100,000",
-      "amount_lower": 50001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "GENUINE PARTS CO",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-07-16",
-      "filing_date": "2026-09-22",
-      "amount_raw": "$500,001 - $1,000,000",
-      "amount_lower": 500001
     }
   ]
 }
