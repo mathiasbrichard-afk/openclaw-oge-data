@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-15T22:49:23Z",
+  "last_updated": "2026-10-16T06:37:46Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -307,28 +307,6 @@
       "date": "2026-07-20",
       "filing_date": "2026-09-22",
       "amount_raw": "$100,001 - $250,000",
-      "amount_lower": 100001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "FOX CORP CL A",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-07-17",
-      "filing_date": "2026-09-22",
-      "amount_raw": "$1,001 - $15000",
-      "amount_lower": 1001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "BRIGHTSPRING HEALTH SVCS",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-07-17",
-      "filing_date": "2026-09-22",
-      "amount_raw": "no $100,001, - $250,000",
       "amount_lower": 100001
     }
   ]
