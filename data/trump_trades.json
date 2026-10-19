@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-18T22:08:41Z",
+  "last_updated": "2026-10-19T07:11:03Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -286,28 +286,6 @@
       "filing_date": "2026-09-22",
       "amount_raw": "no $250,001 - $500,000",
       "amount_lower": 250001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "ZOETISINC",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-07-20",
-      "filing_date": "2026-09-22",
-      "amount_raw": "no $500,001 - $1,000,000",
-      "amount_lower": 500001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "NXP SEMICONDUCTORS NV",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-07-20",
-      "filing_date": "2026-09-22",
-      "amount_raw": "$100,001 - $250,000",
-      "amount_lower": 100001
     }
   ]
 }
