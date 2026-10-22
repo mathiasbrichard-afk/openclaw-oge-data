@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-21T22:57:28Z",
+  "last_updated": "2026-10-22T06:56:14Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -242,28 +242,6 @@
       "filing_date": "2026-09-22",
       "amount_raw": "no S1 001 - $15,ooo",
       "amount_lower": 1
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "ORACLE CORPORATION",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-07-23",
-      "filing_date": "2026-09-22",
-      "amount_raw": "o $100,001 - $250,000",
-      "amount_lower": 100001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "PALANTIR TECHNOLOGIES INC",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-07-23",
-      "filing_date": "2026-09-22",
-      "amount_raw": "no $1,001 - $15,000\nno $1,001 - $15,000",
-      "amount_lower": 1001
     }
   ]
 }
