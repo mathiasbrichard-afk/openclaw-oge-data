@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-25T22:13:08Z",
+  "last_updated": "2026-10-26T07:17:17Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -195,28 +195,6 @@
       "ticker": "N/A",
       "type": "Buy",
       "date": "2026-07-29",
-      "filing_date": "2026-09-22",
-      "amount_raw": "",
-      "amount_lower": 0
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "BERKSHIRE HATHAWAY CLASS B",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-07-27",
-      "filing_date": "2026-09-22",
-      "amount_raw": "no $15,001 - $50,000",
-      "amount_lower": 15001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "MICROSOFT CORP",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-07-27",
       "filing_date": "2026-09-22",
       "amount_raw": "",
       "amount_lower": 0
