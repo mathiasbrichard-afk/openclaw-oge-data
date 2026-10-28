@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-27T23:25:13Z",
+  "last_updated": "2026-10-28T07:48:10Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -176,28 +176,6 @@
       "filing_date": "2026-09-22",
       "amount_raw": "$250,001, - $500,000",
       "amount_lower": 250001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "CASELLA WASTE SYS INC CLASS A",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-07-29",
-      "filing_date": "2026-09-22",
-      "amount_raw": "no $50,001, - $100,000",
-      "amount_lower": 50001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "COOK CNTY IL SALES TAX RV BE/R/ 5 DUE 111529 DTD 082526 FC 111526 2.960%",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-07-29",
-      "filing_date": "2026-09-22",
-      "amount_raw": "",
-      "amount_lower": 0
     }
   ]
 }
