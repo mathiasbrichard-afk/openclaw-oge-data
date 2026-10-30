@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-29T23:44:35Z",
+  "last_updated": "2026-10-30T07:56:47Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -154,28 +154,6 @@
       "filing_date": "2026-10-08",
       "amount_raw": "$100,001 - $250,000",
       "amount_lower": 100001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "ALLY FINL INC PERP -0 NT 7.1000%",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-07-31",
-      "filing_date": "2026-09-22",
-      "amount_raw": "",
-      "amount_lower": 0
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "MERCK & CO. INC.",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-07-31",
-      "filing_date": "2026-09-22",
-      "amount_raw": "$250,001, - $500,000",
-      "amount_lower": 250001
     }
   ]
 }
