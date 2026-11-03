@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-02T22:32:54Z",
+  "last_updated": "2026-11-03T08:54:03Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -143,17 +143,6 @@
       "filing_date": "2026-10-08",
       "amount_raw": "$1,001 - $15,000",
       "amount_lower": 1001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "DALLAS TX AREA RAPID TRAN SALES TAX REV RFDG SR LIEN BIE 5.00 % Due Dec 1. 2026 lnurchase",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-08-04",
-      "filing_date": "2026-10-08",
-      "amount_raw": "$100,001 - $250,000",
-      "amount_lower": 100001
     }
   ]
 }
