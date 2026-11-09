@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-08T23:20:56Z",
+  "last_updated": "2026-11-09T08:56:04Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -121,28 +121,6 @@
       "filing_date": "2026-10-08",
       "amount_raw": "",
       "amount_lower": 0
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "SEMPRA",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-08-10",
-      "filing_date": "2026-10-08",
-      "amount_raw": "$1,001 - $15,000",
-      "amount_lower": 1001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "BOSTON SCIENTIFIC CORP l",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-08-10",
-      "filing_date": "2026-10-08",
-      "amount_raw": "$1,001 - $15,000",
-      "amount_lower": 1001
     }
   ]
 }
