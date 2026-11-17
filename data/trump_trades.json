@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-16T23:09:03Z",
+  "last_updated": "2026-11-17T09:58:53Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -110,17 +110,6 @@
       "filing_date": "2026-10-08",
       "amount_raw": "No $1,000,001 - $5,000,000",
       "amount_lower": 1000001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "SPACE EXPLORATION TECHN SENIOR UNSEC\\iRED NOTES REGS DUE 07/lS/2031 0S.350%",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-08-18",
-      "filing_date": "2026-10-08",
-      "amount_raw": "",
-      "amount_lower": 0
     }
   ]
 }
