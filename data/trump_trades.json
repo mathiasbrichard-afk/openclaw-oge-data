@@ -1,6 +1,138 @@
 {
-  "last_updated": "2026-11-19T09:43:01Z",
+  "last_updated": "2026-11-19T21:56:28Z",
   "trades": [
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "PAYPAL HLDGS INC",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-09-24",
+      "filing_date": "2026-11-19",
+      "amount_raw": "No $1,001, - $15,000",
+      "amount_lower": 1001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "DUKE ENERGY CORP",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-09-24",
+      "filing_date": "2026-11-19",
+      "amount_raw": "No $1,001 - $15,000",
+      "amount_lower": 1001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "ROCKWELL AUTOMATION INC",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-09-17",
+      "filing_date": "2026-11-19",
+      "amount_raw": "No $15,001 - $50000",
+      "amount_lower": 15001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "ZOETISINC",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-09-11",
+      "filing_date": "2026-11-19",
+      "amount_raw": "$15,001 - $50,000",
+      "amount_lower": 15001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "EXELON CORP",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-09-11",
+      "filing_date": "2026-11-19",
+      "amount_raw": "No $1,001 - $15,000",
+      "amount_lower": 1001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "KRYSTAL BIOTECH INC",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-09-10",
+      "filing_date": "2026-11-19",
+      "amount_raw": "$1,001 - $15000",
+      "amount_lower": 1001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "BROADCOM INC",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-09-09",
+      "filing_date": "2026-11-19",
+      "amount_raw": "$1,001 - $15,000",
+      "amount_lower": 1001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "HAMILTON CNTY OH SALES TAX REV RFDG SER A 8/E PTC 4.00 % Duo Doc 1, 2031",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-09-08",
+      "filing_date": "2026-11-19",
+      "amount_raw": "$500,001 - $1,000,000",
+      "amount_lower": 500001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "LOWES COMPANIES INC",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-09-02",
+      "filing_date": "2026-11-19",
+      "amount_raw": "$1,001, - $15,000",
+      "amount_lower": 1001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "SALINA KS IN\"TERNAI. IMPT 2026A OB BIE 5.00 % Duo Oct 1, 2027",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-09-02",
+      "filing_date": "2026-11-19",
+      "amount_raw": "$15,001 - $50000",
+      "amount_lower": 15001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "XYLEM INC",
+      "ticker": "N/A",
+      "type": "Buy",
+      "date": "2026-09-01",
+      "filing_date": "2026-11-19",
+      "amount_raw": "$15,001 - $50000",
+      "amount_lower": 15001
+    },
+    {
+      "member": "Donald Trump",
+      "owner": "Filer",
+      "asset": "APPLOVIN CORPORATION",
+      "ticker": "N/A",
+      "type": "Sell",
+      "date": "2026-09-01",
+      "filing_date": "2026-11-19",
+      "amount_raw": "S50 001 - $100,000",
+      "amount_lower": 50
+    },
     {
       "member": "Donald Trump",
       "owner": "Filer",
