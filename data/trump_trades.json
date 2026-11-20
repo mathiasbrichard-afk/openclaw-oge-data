@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-19T21:56:28Z",
+  "last_updated": "2026-11-20T09:31:09Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -220,28 +220,6 @@
       "filing_date": "2026-10-08",
       "amount_raw": "No $1,001 - $15000",
       "amount_lower": 1001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "KKR&COINC",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-08-21",
-      "filing_date": "2026-10-08",
-      "amount_raw": "$250,001 - $500,000",
-      "amount_lower": 250001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "ADVANCED MICRO DEVICES INC",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-08-21",
-      "filing_date": "2026-10-08",
-      "amount_raw": "No $1,000,001 - $5,000,000",
-      "amount_lower": 1000001
     }
   ]
 }
