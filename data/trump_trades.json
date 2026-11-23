@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T20:31:57Z",
+  "last_updated": "2026-11-23T10:10:55Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -198,28 +198,6 @@
       "filing_date": "2026-10-08",
       "amount_raw": "No $1,000,001 - $5,000,000",
       "amount_lower": 1000001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "SERVICENOW INC",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-08-24",
-      "filing_date": "2026-10-08",
-      "amount_raw": "No $1,001, - $15,000",
-      "amount_lower": 1001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "TXNM ENERGY INC",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-08-24",
-      "filing_date": "2026-10-08",
-      "amount_raw": "No $1,001 - $15000",
-      "amount_lower": 1001
     }
   ]
 }
