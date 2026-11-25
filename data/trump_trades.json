@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T23:20:59Z",
+  "last_updated": "2026-11-25T10:45:14Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -176,17 +176,6 @@
       "filing_date": "2026-10-08",
       "amount_raw": "$100.001 - $250,000",
       "amount_lower": 100
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "EXPEDITORS INTL WASH INC",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-08-26",
-      "filing_date": "2026-10-08",
-      "amount_raw": "$15,001 - $50,000",
-      "amount_lower": 15001
     }
   ]
 }
