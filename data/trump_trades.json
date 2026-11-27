@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26T22:44:07Z",
+  "last_updated": "2026-11-27T10:23:36Z",
   "trades": [
     {
       "member": "Donald Trump",
@@ -154,28 +154,6 @@
       "filing_date": "2026-10-08",
       "amount_raw": "No $15,001 - $50,000",
       "amount_lower": 15001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "JOBY AVIATION INC",
-      "ticker": "N/A",
-      "type": "Buy",
-      "date": "2026-08-28",
-      "filing_date": "2026-10-08",
-      "amount_raw": "No $15,001 - $50,000",
-      "amount_lower": 15001
-    },
-    {
-      "member": "Donald Trump",
-      "owner": "Filer",
-      "asset": "INTUmVE SURGICAL INC",
-      "ticker": "N/A",
-      "type": "Sell",
-      "date": "2026-08-28",
-      "filing_date": "2026-10-08",
-      "amount_raw": "$100.001 - $250,000",
-      "amount_lower": 100
     }
   ]
 }
